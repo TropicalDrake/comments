@@ -1,0 +1,284 @@
+<html>
+
+<head>
+
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+
+
+    <div id="comments"></div>
+
+
+    <script>
+        initComments();
+
+
+        function initComments() {
+
+            var comments = document.getElementById("comments");
+
+            // Stwórz core template w miejscu id="comments"
+
+            comments.innerHTML = coreTemplate();
+
+            // Pobierz komentarze
+
+            // Ustaw handlery dla formularzy
+
+
+
+
+        }
+
+        function loadComments(commmentsElement,pageName,pageNumber){
+
+            //
+
+
+        }
+
+        function addFormHandlers(commentsElement){
+
+
+
+
+        }
+
+
+
+        function formHandler() {
+
+
+
+
+
+        }
+
+
+
+        function navigationHandler() {
+
+
+
+
+        }
+
+
+        function coreTemplate(){
+
+            return `
+                <div class="comments__head">
+
+                    <div class="comments__head__count" id="comments-count"><span class="ctext-xbold">Komentarze (3)</span>
+                    </div>
+                    <div class="comments__head__name" id="comments-name"><span class="ctext-xbold">msza-online.pl</span>
+                    </div>
+
+
+                </div>
+
+                <div class="comments__info" id="comments-info">
+
+                    <div class="comments__info__blue"><span>info</span></div>
+                    <div class="comments__info__red"><span>info</span></div>
+                    <div class="comments__info__green"><span>info</span></div>
+                    <div class="comments__info__loading">
+
+                        <div class="comments__info__loading__text"><span>Wczytywanie komentarzy</span></div>
+                        <div class="comments__info__loading__roll"><img class="roll" src="img/sync.svg" /></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="comments__test">
+                    <div class="comments__test__count">Komentarze (3)</div>
+                    <div class="comments__test__name">msza-online.pl</div>
+                </div>
+                <div class="comments__options">
+
+                    <div class="dropdown dropdown--options">
+
+                        <div class="dropdown__select"><img src="img/filter.svg" width=23 height=23></div>
+                        <div class="dropdown__menu dropdown__menu--left">
+
+                            <a href="#" class="dropdown__menu__entry">Data dodania</a>
+                            <a href="#" class="dropdown__menu__entry">Wyświetlenia</a>
+                            <a href="#" class="dropdown__menu__entry">Polubienia</a>
+
+                        </div>
+
+
+                    </div>
+
+                
+                </div>
+
+
+
+                </div>
+
+
+                <div class="comments__container">
+
+
+
+                    <div id="comments-refresh" class="comments__container__refresh">
+                        <a href="#">
+                            Pokaż 5 Nowych Komentarzy
+                        </a>
+                    </div>
+
+                    <div class="comments__container__reply">
+                        <form id="comments-reply" class="reply" method="post">
+
+                            <div class="reply__photo">
+                                <img src="https://www.aalforum.eu/wp-content/uploads/2016/04/profile-placeholder.png">
+                            </div>
+
+                            <div class="reply__content">
+
+                                <img src="img/rim.svg" class="reply__content__rim">
+
+                                <div><textarea class="input-custom" placeholder="Treść komentarza" rows=3></textarea></div>
+                                <div><input class="input-custom" type="text" placeholder="Twoje imie i nazwisko"></div>
+                                <div><input class="input-custom" type="text" placeholder="Kapcza"></div>
+                                <div>
+
+                                    <input type="text" hidden value="msza-online.pl" name="pagename">
+                                    <input type="text" hidden value="add-comment" name="handler">
+                                    <input type="text" hidden value="null" name="replyto">
+
+                                </div>
+
+                                <div class="reply__content__submit">
+
+                                    <button type="submit" class="button-custom">Dodaj komentarz</button>
+
+                                </div>
+
+                            </div>
+
+
+                        </form>
+                    </div>
+
+                    <div class="comments__container__comments" id="comments-container">
+
+                        <div class="comment">
+
+                            <div class="comment__photo"><img src="https://www.aalforum.eu/wp-content/uploads/2016/04/profile-placeholder.png"></div>
+                            <div class="comment__container">
+
+                                <img src="img/rim.svg" class="comment__container__rim">
+
+                                <div class="comment__container__content">
+
+                                    <div class="comment__container__content__head">
+
+                                        <div><span class="ctext-xbold ctext-dark">Wawrzyniec Madej</span></div>
+                                        <div><span class="ctext-gray ctext-light">5 dni temu · <label
+                                                    for="checkbox-1-1" class="ctext-link">Odpowiedz</label></span></div>
+
+                                    </div>
+
+                                    <div class="comment__container__content__text">
+
+                                        <span class="text-format-1">
+                                            Komentarz
+                                        </span>
+
+                                    </div>
+
+                                    <div class="comment__container__content__options">
+
+                                        <label for="checkbox-2-1" class="ctext-gray ctext-light ctext-link">Pokaż odpowiedzi (21)</label>
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <input type="checkbox" class="checkbox-1" id="checkbox-1-1" hidden>
+                                <div class="comment__container__reply">
+                                
+                                    <form id="comments-reply" class="reply" method="post">
+
+                                        <div class="reply__photo">
+                                            <img src="https://www.aalforum.eu/wp-content/uploads/2016/04/profile-placeholder.png">
+                                        </div>
+
+                                        <div class="reply__content">
+
+                                            <img src="img/rim.svg" class="reply__content__rim">
+
+                                            <div><textarea class="input-custom" placeholder="Treść komentarza"
+                                                    rows=3></textarea></div>
+                                            <div><input class="input-custom" type="text"
+                                                    placeholder="Twoje imie i nazwisko"></div>
+                                            <div><input class="input-custom" type="text"
+                                                    placeholder="Kapcza"></div>
+                                            <div>
+
+                                                <input type="text" hidden value="msza-online.pl" name="pagename">
+                                                <input type="text" hidden value="add-comment" name="handler">
+                                                <input type="text" hidden value="1" name="replyto">
+
+                                            </div>
+
+                                            <div class="reply__content__submit">
+
+                                                <button type="submit" class="button-custom">Dodaj komentarz</button>
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </form>
+
+                                </div>
+
+                                <input type="checkbox" class="checkbox-2" id="checkbox-2-1" hidden>
+                                <div class="comment__container__replies">
+
+                                    abba
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="comments-showmore" class="comments__container__showmore">
+                        <a href="#">
+                            Pokaż Więcej Komentarzy
+                        </a>
+                    </div>
+
+
+                </div>
+
+            `;
+
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
